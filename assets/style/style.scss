@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    // font-family: 'Press Start 2P', cursive;
+    outline: none;
+}
+
+.question {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-title{
+        font-size: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &-respBox{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 500px;
+        background: grey;
+        border-radius: 10px;
+        padding: 10px 0;
+        &-item{
+            padding: 5px 20px;
+            border-radius: 10px;
+            min-width: 200px;
+
+        }
+    }
+
+
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center;
+    background: black;
+    width: 100%;
+    padding: 5px 0;
+    &-dev {
+        color: white;
+        display: flex;
+        align-items: center;
+        font-family: monospace;
+        font-size: 20px;
+        &-img {
+            width: 60px;
+            margin: 0 10px;
+            border-radius: 20px;
+        }
+        a {
+            margin: 0 5px;
+            letter-spacing: 3px;
+            animation: rainbow 5s linear infinite;
+        }
+    }
+}
+.footerMob {
+    display: none;
+}
+
+@media screen and (max-width: 780px) {
+    .footer {
+        display: none;
+    }
+    .footerMob {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: black;
+        margin-top: 75px;
+        &-box {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            &-dev {
+                color: white;
+                font-size: 1.6rem;
+            }
+            &-img {
+                width: 55px;
+                border-radius: 15px;
+                margin: 0 10px;
+            }
+        }
+        &-link {
+            display: flex;
+            margin: 10px 0;
+            align-items: center;
+            &-dev {
+                color: white;
+                font-size: 1.2rem;
+            }
+            &-rainbow {
+                animation: rainbow 5s linear infinite;
+                font-size: 20px;
+                font-weight: 800;
+                margin: 0 10px;
+            }
+            &-text {
+                color: white;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@keyframes rainbow {
+    100%,
+    0% {
+        color: rgb(255, 0, 0);
+    }
+    8% {
+        color: rgb(255, 127, 0);
+    }
+    16% {
+        color: rgb(255, 255, 0);
+    }
+    25% {
+        color: rgb(127, 255, 0);
+    }
+    33% {
+        color: rgb(0, 255, 0);
+    }
+    41% {
+        color: rgb(0, 255, 127);
+    }
+    50% {
+        color: rgb(0, 255, 255);
+    }
+    58% {
+        color: rgb(0, 127, 255);
+    }
+    66% {
+        color: rgb(0, 0, 255);
+    }
+    75% {
+        color: rgb(127, 0, 255);
+    }
+    83% {
+        color: rgb(255, 0, 255);
+    }
+    91% {
+        color: rgb(255, 0, 127);
+    }
+}
