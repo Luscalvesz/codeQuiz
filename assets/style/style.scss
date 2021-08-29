@@ -5,34 +5,40 @@
     outline: none;
 }
 
-.question {
-    height: 80vh;
+main{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    &-title{
-        font-size: 25px;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-    &-respBox{
+    .menu{
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 500px;
-        background: grey;
-        border-radius: 10px;
-        padding: 10px 0;
-        &-item{
-            padding: 5px 20px;
-            border-radius: 10px;
-            min-width: 200px;
-
-        }
     }
-
-
+    .question {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &-title{
+            font-size: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        &-respBox{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 500px;
+            background: grey;
+            border-radius: 10px;
+            padding: 10px 0;
+            &-item{
+                padding: 5px 20px;
+                border-radius: 10px;
+                min-width: 200px;
+    
+            }
+        }
+    
+    }
 }
 
 .footer {
