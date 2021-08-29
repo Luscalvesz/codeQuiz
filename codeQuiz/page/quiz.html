@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeQuiz - Quiz</title>
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-box">
+            <img class="header-box-logo" onmouseover="logoIn()" onmouseout="logoOut()" src="assets/imgs/logo.svg" alt="logo">
+        </div>
+        <ul class="header-ul">
+            <li class="header-ul-li log"><a href="login.html">Login</a></li>
+            <li class="header-ul-li cad"><a href="#">Cadastre-se</a></li>
+            <li class="header-ul-li sob"><a href="#">Sobre</a></li>
+        </ul>
+    </header>
+    <header class="headerMob">
+        <div class="headerMob-box">
+            <img class="headerMob-box-logo" onclick="callMenu()" src="assets/imgs/logo.svg" alt="logo">
+            <p class="headerMob-box-text">CodeQuiz</p>
+        </div>
+        <ul class="headerMob-ul" id="menu">
+            <li class="headerMob-ul-li log">Login</li>
+            <li class="headerMob-ul-li cad">Cadastro</li>
+            <li class="headerMob-ul-li sob">Sobre</li>
+        </ul>
+    </header>
+    <main class="main">
+        <div class="main-box">
+            <h1 class="main-box-title">Quiz Theme</h1>
+            <h2 class="main-box-quest">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus perferendis magni aut numquam quidem?</h2>
+            <div class="main-box-infos">
+                <h3 class="main-box-infos-time" id="timer">60</h3>
+                <img class="main-box-infos-img" id="questImg" src="./assets/imgs/quizImgs/nazare.gif">
+                <h3 class="main-box-infos-points">Pontos: 200</h3>
+            </div>
+            <div class="main-box-answers"> 
+                <p class="main-box-answers-resp" id="err">batata tata tatta </p>
+                <p class="main-box-answers-resp">batata batata</p>
+                <p class="main-box-answers-resp">tres batatas</p>
+                <p class="main-box-answers-resp">batata</p>
+            </div>
+        </div>
+    </main>
+    
+    <img class="fausto" id="fausto" src="./assets/imgs/quizImgs/fausto.png" alt="">
+    <footer class="footer">
+        <!-- <img class="footer-img" src="./assets/imgs/logoCodeby.png" alt="logo codeby"> -->
+        <p class="footer-text">© <a class="footer-text-link" href="http://luscadev.com.br">luscadev.com.br</a> - 2021</p>
+    </footer>
+    <audio id="errou">
+        <source src="./assets/songs/errrou.mp3" type="audio/mpeg">
+    </audio>
+</body>
+<script type="text/javascript" src="assets/scripts/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="assets/scripts/slick.min.js"></script>
+<script type="text/javascript" src="assets/scripts/quiz.js"></script>
+
+</html>
