@@ -192,11 +192,15 @@ body .main-box-title {
   color: white;
 }
 
-body .main-box-quest {
+body .main-box-desc {
   color: white;
   text-align: center;
   font-weight: 100;
-  font-size: 20px;
+  font-size: 15px;
+}
+
+body .main-box-img {
+  margin: 20px 0;
 }
 
 body .main-box-infos {
@@ -254,7 +258,7 @@ body .main-box-answers-resp {
   margin: 10px 15px;
   cursor: pointer;
   position: relative;
-  width: 525px;
+  width: 550px;
   z-index: 1;
 }
 

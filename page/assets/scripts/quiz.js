@@ -17,32 +17,31 @@ function aleatoryImg() {
 
     img.src = `./assets/imgs/quizImgs/${newImg}`
 }
-function timer() {
-    var timer = document.getElementById('timer')
-    var time = 60
-    var timeInterval = setInterval(() => {
-        time = time - 1;
-        timer.innerHTML = time
-        if (timer.innerHTML == "0") {
-            timer.innerHTML = "Tempo esgotado!"
-            clearTimeout(timeInterval)
-            timer.classList.add("timeOff")
-        }
+// function timer() {
+//     var timer = document.getElementById('timer')
+//     var time = 60
+//     var timeInterval = setInterval(() => {
+//         time = time - 1;
+//         timer.innerHTML = time
+//         if (timer.innerHTML == "0") {
+//             timer.innerHTML = "Tempo esgotado!"
+//             clearTimeout(timeInterval)
+//             timer.classList.add("timeOff")
+//         }
 
-    }, 1000);
-}
+//     }, 1000);
+// }
 
-document.getElementById("err").addEventListener("click", function () {
-    var errou = document.getElementById('errou')
-    errou.play()
+// document.getElementById("err").addEventListener("click", function () {
+//     var errou = document.getElementById('errou')
+//     errou.play()
 
-    var faustoArray = ["fausto.png", "fausto1.png", "fausto2.png"]
-    var newImg = faustoArray[Math.floor(Math.random() * faustoArray.length)];
-    var faustoImg = document.getElementById('fausto')
-    faustoImg.classList.toggle("fausTop")
-    faustoImg.src = `./assets/imgs/quizImgs/${newImg}`
-});
-window.onload = aleatoryImg(), timer()
+//     var faustoArray = ["fausto.png", "fausto1.png", "fausto2.png"]
+//     var newImg = faustoArray[Math.floor(Math.random() * faustoArray.length)];
+//     var faustoImg = document.getElementById('fausto')
+//     faustoImg.classList.toggle("fausTop")
+//     faustoImg.src = `./assets/imgs/quizImgs/${newImg}`
+// });
 
 
 
@@ -54,8 +53,8 @@ window.onload = aleatoryImg(), timer()
 
 var questionsArr = [
         
-    { "title": "O css está correto?", "desc": "Será que o código abaixo está certo?", "options":{"option1": "sim","option2": "não","option3": "talvez"},"correct": "sim","img": "Nova-windblown.png" }, 
-    { "title": "O js está correto?", "desc": "Será que o código abaixo está certo?", "options":{"option1": "sim","option2": "não","option3": "talvez"}, "correct": "não","img": "Nova-windblown.png" }
+    { "title": "Isso é css?", "desc": "Será que está certo?", "options":{"option1": "sim","option2": "não","option3": "talvez"},"correct": "sim","img": "question01.png" }, 
+    { "title": "Isso é js?", "desc": "Será que está certo?", "options":{"option1": "sim","option2": "não","option3": "talvez"}, "correct": "não","img": "question02.png" }
 
 ]
     
@@ -77,14 +76,14 @@ function question() {
     localStorage.setItem("lastQuestion", JSON.stringify(lastQuestion));
 
     question.innerHTML = `
-        <h3 class="question-title" id="questionTitle">${questionsArr[i].title}</h3>
-        <p class="question-text" id="questionDesc">${questionsArr[i].desc}</p>
-        <img src="${questionsArr[i].img}" alt="img" id="questionImg">
-        <div class="question-respBox" id="questionOptions">
-            <button class="question-respBox-item" onclick="resp(value)" value="${questionsArr[i].options.option1}">${questionsArr[i].options.option1}</button>
-            <button class="question-respBox-item" onclick="resp(value)" value="${questionsArr[i].options.option2}">${questionsArr[i].options.option2}</button>
-            <button class="question-respBox-item" onclick="resp(value)" value="${questionsArr[i].options.option3}">${questionsArr[i].options.option3}</button>
-            <button class="question-respBox-item" onclick="resp(value)" value="${questionsArr[i].options.option4}">${questionsArr[i].options.option4}</button>
+        <h3 class="main-box-title" id="questionTitle">${questionsArr[i].title}</h3>
+        <p class="main-box-desc" id="questionDesc">${questionsArr[i].desc}</p>
+        <img class="main-box-img" src="./assets/imgs/questionImgs/${questionsArr[i].img}" alt="img" id="questionImg">
+        <div class="main-box-answers" id="questionOptions">
+            <button class="main-box-answers-resp" id="err" onclick="resp(value)" value="${questionsArr[i].options.option1}">${questionsArr[i].options.option1}</button>
+            <button class="main-box-answers-resp" onclick="resp(value)" value="${questionsArr[i].options.option2}">${questionsArr[i].options.option2}</button>
+            <button class="main-box-answers-resp" onclick="resp(value)" value="${questionsArr[i].options.option3}">${questionsArr[i].options.option3}</button>
+            <button class="main-box-answers-resp" onclick="resp(value)" value="${questionsArr[i].options.option4}">${questionsArr[i].options.option4}</button>
         </div>
 
     `
@@ -100,15 +99,18 @@ function resp(value) {
     console.log(user);
     if (user.correct == value) {
         question()
-        time += 5
-        timer(time)
-    }else{
 
-        time -= 5
-        timer(time)
+        alert("acertou");
+        // time += 5
+        // timer(time)
+    }else{
+        alert("errou");
+
+        // time -= 5
+        // timer(time)
     }
 }
 
 
-// window.onload = question();
-
+// window.onload = aleatoryImg(), timer(), question();
+window.onload = question();
