@@ -46,25 +46,19 @@ window.onload = aleatoryImg(), timer()
 
 
 
-/* 
-    var questionsArr = [
+
+
+
+
+
+
+var questionsArr = [
         
     { "title": "O css está correto?", "desc": "Será que o código abaixo está certo?", "options":{"option1": "sim","option2": "não","option3": "talvez"},"correct": "sim","img": "Nova-windblown.png" }, 
     { "title": "O js está correto?", "desc": "Será que o código abaixo está certo?", "options":{"option1": "sim","option2": "não","option3": "talvez"}, "correct": "não","img": "Nova-windblown.png" }
 
 ]
-        
-// let time = 60;
-
-
-function timer(time) {
-    let timer = document.getElementById("timer")
-
-    setInterval(() => {
-        timer.innerText=`Tempo restante: ${time}`
-        time--
-    }, 1000);
-}
+    
 
 function question() {
     console.log("to aqui ",questionsArr); 
@@ -116,6 +110,5 @@ function resp(value) {
 }
 
 
-window.onload = question();
+// window.onload = question();
 
-*/
