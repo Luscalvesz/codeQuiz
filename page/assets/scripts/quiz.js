@@ -1,3 +1,11 @@
+let questionsArr = [
+        
+    { "title": "Isso é css?", "desc": "Será que está certo?", "options":{"option1": "sim","option2": "não","option3": "talvez"},"correct": "sim","img": "question01.png" }, 
+    { "title": "Isso é js?", "desc": "Será que está certo?", "options":{"option1": "sim","option2": "não","option3": "talvez"}, "correct": "não","img": "question02.png" }
+
+]
+let time = 60;
+
 function logoIn() {
     var logo = document.querySelector(".header-box-logo")
     logo.src = "assets/imgs/logoActive.svg"
@@ -17,20 +25,21 @@ function aleatoryImg() {
 
     img.src = `./assets/imgs/quizImgs/${newImg}`
 }
-// function timer() {
-//     var timer = document.getElementById('timer')
-//     var time = 60
-//     var timeInterval = setInterval(() => {
-//         time = time - 1;
-//         timer.innerHTML = time
-//         if (timer.innerHTML == "0") {
-//             timer.innerHTML = "Tempo esgotado!"
-//             clearTimeout(timeInterval)
-//             timer.classList.add("timeOff")
-//         }
 
-//     }, 1000);
-// }
+function timer() {
+    var timer = document.getElementById('timer')
+    var timeInterval = setInterval(() => {
+        time = time - 1;
+        timer.innerHTML = time
+        // console.log(time);
+        if (timer.innerHTML == "0") {
+            timer.innerHTML = "Tempo esgotado!"
+            clearTimeout(timeInterval)
+            timer.classList.add("timeOff")
+        }
+
+    }, 1000);
+}
 
 // document.getElementById("err").addEventListener("click", function () {
 //     var errou = document.getElementById('errou')
@@ -51,12 +60,7 @@ function aleatoryImg() {
 
 
 
-var questionsArr = [
-        
-    { "title": "Isso é css?", "desc": "Será que está certo?", "options":{"option1": "sim","option2": "não","option3": "talvez"},"correct": "sim","img": "question01.png" }, 
-    { "title": "Isso é js?", "desc": "Será que está certo?", "options":{"option1": "sim","option2": "não","option3": "talvez"}, "correct": "não","img": "question02.png" }
 
-]
     
 
 function question() {
@@ -101,16 +105,14 @@ function resp(value) {
         question()
 
         alert("acertou");
-        // time += 5
-        // timer(time)
+        time += 5;
+        // pontos += 50;
     }else{
-        alert("errou");
-
-        // time -= 5
-        // timer(time)
+        alert("errou, tente novamente");
+        time -= 5
     }
 }
 
 
 // window.onload = aleatoryImg(), timer(), question();
-window.onload = question();
+window.onload = question(), timer(60);
