@@ -5,4 +5,4 @@ a quiz game about development!
 
 
 still in development<br>
-V 2.00
+V 2.02
